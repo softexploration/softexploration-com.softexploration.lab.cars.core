@@ -8,7 +8,6 @@ import com.softexploration.lab.cars.core.types.CarEntry;
 
 /**
  * Service to manage cars
- *
  */
 public interface CarService {
 

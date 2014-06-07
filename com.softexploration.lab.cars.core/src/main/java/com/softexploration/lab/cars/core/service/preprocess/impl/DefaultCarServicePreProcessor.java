@@ -19,17 +19,6 @@ public class DefaultCarServicePreProcessor implements CarServicePreProcessor {
 		return convertCarEntryToCar();
 	}
 
-//	protected Function<CarEntry, Car.Builder> convertCarEntryToBuilder() {
-//		return entry -> {
-//			final Builder builder = new Car.Builder(entry.getArray()[0], entry.getArray()[1]);
-//			if (entry.getArray().length > 4) {
-//				builder.year(Integer.valueOf(entry.getArray()[2])).engine(entry.getArray()[3])
-//						.color(entry.getArray()[4]);
-//			}
-//			return builder;
-//		};
-//	}
-
 	protected Function<CarEntry, Car> convertCarEntryToCar() {
 		return entry -> {
 			final Builder builder = new Car.Builder(entry.getArray()[0], entry.getArray()[1]);
