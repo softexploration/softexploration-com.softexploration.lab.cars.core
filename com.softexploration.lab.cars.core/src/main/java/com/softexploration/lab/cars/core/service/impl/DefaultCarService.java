@@ -2,6 +2,7 @@ package com.softexploration.lab.cars.core.service.impl;
 
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import com.google.common.collect.Lists;
 import com.softexploration.lab.cars.core.domain.Car;
@@ -69,11 +70,7 @@ public class DefaultCarService implements CarService {
 
 	@Override
 	public List<Car> findCars(final Predicate<Car> predicate) {
-		final List<Car> ret = Lists.newLinkedList();
-		carsRepository.stream().filter(predicate).forEach(c -> {
-			ret.add(c);
-		});
-		return ret;
+		return carsRepository.stream().filter(predicate).collect(Collectors.toList());
 	}
 
 	@Override
